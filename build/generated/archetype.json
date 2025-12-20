@@ -1,0 +1,26 @@
+{
+  "$id": "4nYLDly7vcAg",
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "title": "epsilon",
+  "type": "object",
+  "properties": {
+    "patient": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "Age"
+        }
+      }
+    },
+    "vitals": {
+      "type": "object",
+      "properties": {
+        "health_rate": {
+          "type": "integer",
+          "description": "Health Rate"
+        }
+      }
+    }
+  }
+}

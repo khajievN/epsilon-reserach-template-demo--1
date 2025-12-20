@@ -1,0 +1,22 @@
+version: '1.0'
+analysis:
+  name: Main
+  description: Analysis from main.py
+  script_file: main.py
+  requirements: requirements.txt
+datasets:
+- dataset_id: 2f84d996-ef7c-4350-84a9-07e2159d49fd
+  package_id: adsasd_yKtpdf
+  import_path: generated.models
+  function_name: create_dataset
+  archetype_path: generated/archetype.json
+privacy:
+  epsilon: 1.0
+execution:
+  environment: enclave
+  timeout: 300
+generated_at: '2025-12-21 02:00:05.201864'
+build_info:
+  command: epsilon build main.py
+  detected_datasets: 1
+  original_script: main.py

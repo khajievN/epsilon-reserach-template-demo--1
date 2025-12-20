@@ -1,0 +1,26 @@
+# Auto-generated requirements using pip freeze
+# Generated from: main.py
+# Generated at: 2025-12-21 02:00:05.201727
+
+certifi==2025.11.12
+charset-normalizer==3.4.4
+click==8.1.8
+epsilon-sdk @ git+https://github.com/Epsilon-Data/epsilon-sdk.git@ca70fbc8d24485259c1826cad54312dd7fe15e4e
+idna==3.11
+markdown-it-py==3.0.0
+mdurl==0.1.2
+numpy==2.0.2
+pandas==2.3.3
+Pygments==2.19.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+PyYAML==6.0.3
+requests==2.32.5
+rich==14.2.0
+scipy==1.13.1
+shellingham==1.5.4
+six==1.17.0
+typer==0.20.1
+typing_extensions==4.15.0
+tzdata==2025.3
+urllib3==2.6.2

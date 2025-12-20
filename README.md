@@ -12,17 +12,17 @@ A ready-to-use template for privacy-preserving data research with the Epsilon SD
    pip install -r requirements.txt
    ```
 3. **Start researching**:
-   ```bash
+```bash
    # Login to Epsilon platform
    epsilon login
    # See available datasets
    epsilon datasets
    # Download dataset example
    epsilon init <dataset_id>
-   # Run 
+   # Run
    epsilon run
    # Build for deployment
    epsilon build
-   # Change Server (you can use local server api ex : http://localhost:3334) 
+   # Change Server (you can use local server api ex : http://localhost:3334)
    epsilon change-server <server_url>
    ```
