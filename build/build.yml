@@ -5,8 +5,8 @@ analysis:
   script_file: main.py
   requirements: requirements.txt
 datasets:
-- dataset_id: 2f84d996-ef7c-4350-84a9-07e2159d49fd
-  package_id: adsasd_yKtpdf
+- dataset_id: 2a45cf39-85f5-4949-a6fd-0f85d334dc05
+  archetype_id: miMLjquFg2Jx
   import_path: generated.models
   function_name: create_dataset
   archetype_path: generated/archetype.json
@@ -15,7 +15,7 @@ privacy:
 execution:
   environment: enclave
   timeout: 300
-generated_at: '2025-12-21 02:00:05.201864'
+generated_at: '2025-12-22 16:51:16.505180'
 build_info:
   command: epsilon build main.py
   detected_datasets: 1
