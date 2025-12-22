@@ -1,5 +1,5 @@
 {
-  "$id": "miMLjquFg2Jx",
+  "$id": "RcskeICGeVpy",
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "title": "epsilon",
   "type": "object",
@@ -16,9 +16,9 @@
     "vitals": {
       "type": "object",
       "properties": {
-        "heath_rate": {
+        "health_rate": {
           "type": "integer",
-          "description": "Heath Rate"
+          "description": "Health Rate"
         }
       }
     }

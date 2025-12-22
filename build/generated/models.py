@@ -69,13 +69,13 @@ class Vitals:
         self._data = data if data else {}
 
     @property
-    def heath_rate(self):
+    def health_rate(self):
         # Try direct access first (JSON format)
-        if 'heath_rate' in self._data:
-            return self._data['heath_rate']
+        if 'health_rate' in self._data:
+            return self._data['health_rate']
         # Try flattened access (CSV format)
         for k, v in self._data.items():
-            if k.endswith('.heath_rate'):
+            if k.endswith('.health_rate'):
                 return v
         return None
 
