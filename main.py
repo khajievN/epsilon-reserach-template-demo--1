@@ -9,7 +9,8 @@ def main():
     for record in dataset:
         # Example: Access fields from your archetype
         # print(record.field_name)
-        print(record.vitals.healthrate)
+        print("Health Rate" + record.vitals.healthrate)
+        print("Blood Pressure" + record.vitals.bloodpressure)
         pass
 
     return {"result": "Analysis complete"}
