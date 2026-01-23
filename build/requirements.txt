@@ -1,11 +1,11 @@
 # Auto-generated requirements using pip freeze
 # Generated from: main.py
-# Generated at: 2026-01-07 17:06:22.109904
+# Generated at: 2026-01-23 17:30:42.258760
 
 certifi==2025.11.12
 charset-normalizer==3.4.4
 click==8.1.8
-epsilon-sdk @ git+https://github.com/Epsilon-Data/epsilon-sdk.git@ca70fbc8d24485259c1826cad54312dd7fe15e4e
+epsilon-sdk==0.3.3
 idna==3.11
 markdown-it-py==3.0.0
 mdurl==0.1.2

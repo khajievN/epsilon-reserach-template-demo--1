@@ -1,30 +1,29 @@
 {
-  "$id": "kr1ofrQkBcsZ",
+  "$id": "484fd0b4-978d-4f86-9a12-4455a0ce7020/8zDi9Da0oDNI",
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
-  "title": "epsilon",
+  "title": "Test",
   "type": "object",
   "properties": {
-    "vitals": {
+    "examinations": {
       "type": "object",
       "properties": {
-        "healthrate": {
-          "type": "integer",
-          "description": "HealthRate"
-        },
-        "bloodpressure": {
+        "blood_pressure": {
           "type": "object",
-          "description": "BloodPressure"
+          "description": "Blood Pressure"
+        },
+        "date": {
+          "type": "object",
+          "description": "Date"
+        },
+        "heart_rate": {
+          "type": "integer",
+          "description": "Heart rate"
         }
       }
     },
-    "patient": {
+    "person": {
       "type": "object",
-      "properties": {
-        "age": {
-          "type": "integer",
-          "description": "Age"
-        }
-      }
+      "properties": {}
     }
   }
 }

@@ -48,47 +48,47 @@ class DatasetWrapper:
         return Root(self.records[0]) if self.records else None
 
 
-class Vitals:
+class Examinations:
     def __init__(self, data):
         self._data = data if data else {}
 
     @property
-    def healthrate(self):
+    def blood_pressure(self):
         # Try direct access first (JSON format)
-        if 'healthrate' in self._data:
-            return self._data['healthrate']
+        if 'blood_pressure' in self._data:
+            return self._data['blood_pressure']
         # Try flattened access (CSV format)
         for k, v in self._data.items():
-            if k.endswith('.healthrate'):
+            if k.endswith('.blood_pressure'):
                 return v
         return None
 
     @property
-    def bloodpressure(self):
+    def date(self):
         # Try direct access first (JSON format)
-        if 'bloodpressure' in self._data:
-            return self._data['bloodpressure']
+        if 'date' in self._data:
+            return self._data['date']
         # Try flattened access (CSV format)
         for k, v in self._data.items():
-            if k.endswith('.bloodpressure'):
+            if k.endswith('.date'):
+                return v
+        return None
+
+    @property
+    def heart_rate(self):
+        # Try direct access first (JSON format)
+        if 'heart_rate' in self._data:
+            return self._data['heart_rate']
+        # Try flattened access (CSV format)
+        for k, v in self._data.items():
+            if k.endswith('.heart_rate'):
                 return v
         return None
 
 
-class Patient:
+class Person:
     def __init__(self, data):
         self._data = data if data else {}
-
-    @property
-    def age(self):
-        # Try direct access first (JSON format)
-        if 'age' in self._data:
-            return self._data['age']
-        # Try flattened access (CSV format)
-        for k, v in self._data.items():
-            if k.endswith('.age'):
-                return v
-        return None
 
 
 class Root:
@@ -96,29 +96,29 @@ class Root:
         self._data = data if data else {}
 
     @property
-    def vitals(self):
+    def examinations(self):
         # Handle nested field access with dot notation
-        if 'vitals' in self._data and isinstance(self._data['vitals'], dict):
-            return Vitals(self._data['vitals'])
+        if 'examinations' in self._data and isinstance(self._data['examinations'], dict):
+            return Examinations(self._data['examinations'])
         # Handle flattened CSV data
         flattened = {}
-        prefix = 'vitals.'
+        prefix = 'examinations.'
         for k, v in self._data.items():
             if k.startswith(prefix):
                 nested_key = k[len(prefix):]
                 flattened[nested_key] = v
-        return Vitals(flattened)
+        return Examinations(flattened)
 
     @property
-    def patient(self):
+    def person(self):
         # Handle nested field access with dot notation
-        if 'patient' in self._data and isinstance(self._data['patient'], dict):
-            return Patient(self._data['patient'])
+        if 'person' in self._data and isinstance(self._data['person'], dict):
+            return Person(self._data['person'])
         # Handle flattened CSV data
         flattened = {}
-        prefix = 'patient.'
+        prefix = 'person.'
         for k, v in self._data.items():
             if k.startswith(prefix):
                 nested_key = k[len(prefix):]
                 flattened[nested_key] = v
-        return Patient(flattened)
+        return Person(flattened)
