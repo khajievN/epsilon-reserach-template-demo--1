@@ -7,7 +7,7 @@ def main():
 
     # Your analysis code here
     for record in dataset:
-        print(record.examinations.heart_rate)
+        print(record.personal_info.last_name)
         # Example: Access fields from your archetype
         # print(record.field_name)
         pass

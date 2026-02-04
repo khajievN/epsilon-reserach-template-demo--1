@@ -1,29 +1,42 @@
 {
-  "$id": "484fd0b4-978d-4f86-9a12-4455a0ce7020/8zDi9Da0oDNI",
+  "$id": "3a9bf0ce-23fa-4a93-976c-97fa8bbeecfa/ZD6mhvPyas1H",
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
-  "title": "Test",
+  "title": "epsilon",
   "type": "object",
   "properties": {
-    "examinations": {
+    "personal_info": {
       "type": "object",
       "properties": {
-        "blood_pressure": {
+        "first_name": {
           "type": "object",
-          "description": "Blood Pressure"
+          "description": "First Name"
         },
-        "date": {
+        "last_name": {
           "type": "object",
-          "description": "Date"
+          "description": "Last Name"
         },
-        "heart_rate": {
-          "type": "integer",
-          "description": "Heart rate"
+        "email": {
+          "type": "object",
+          "description": "Email"
         }
       }
     },
-    "person": {
+    "student": {
       "type": "object",
       "properties": {}
+    },
+    "enrollment": {
+      "type": "object",
+      "properties": {
+        "university": {
+          "type": "integer",
+          "description": "University"
+        },
+        "year": {
+          "type": "integer",
+          "description": "Year"
+        }
+      }
     }
   }
 }
