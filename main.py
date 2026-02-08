@@ -1,18 +1,22 @@
 from generated.models import create_dataset
+from collections import Counter
 
 
 def main():
     dataset = create_dataset()
     records = list(dataset)
 
-    years = [int(r.enrollment.year) for r in records if r.enrollment.year]
+    uni_counts = Counter(r.enrollment.university for r in records if r.enrollment.university)
+    top_5 = dict(uni_counts.most_common(5))
+
+    has_email = sum(1 for r in records if r.personal_info.email)
 
     return {
         "total_records": len(records),
-        "avg_enrollment_year": sum(years) / len(years) if years else 0,
-        "min_year": min(years) if years else 0,
-        "max_year": max(years) if years else 0,
-        "unique_universities": len(set(r.enrollment.university for r in records if r.enrollment.university))
+        "records_with_email": has_email,
+        "email_coverage_pct": round(has_email / len(records) * 100, 1) if records else 0,
+        "top_5_universities": top_5,
+        "distinct_universities": len(uni_counts)
     }
 
 
