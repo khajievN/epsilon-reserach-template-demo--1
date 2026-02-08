@@ -1,18 +1,20 @@
 from generated.models import create_dataset
 
+
 def main():
-    # Load the dataset
     dataset = create_dataset()
-    print(f"Loaded {len(dataset)} records")
+    records = list(dataset)
 
-    # Your analysis code here
-    for record in dataset:
-        print(record.personal_info.last_name)
-        # Example: Access fields from your archetype
-        # print(record.field_name)
-        pass
+    years = [int(r.enrollment.year) for r in records if r.enrollment.year]
 
-    return {"result": "Analysis complete"}
+    return {
+        "total_records": len(records),
+        "avg_enrollment_year": sum(years) / len(years) if years else 0,
+        "min_year": min(years) if years else 0,
+        "max_year": max(years) if years else 0,
+        "unique_universities": len(set(r.enrollment.university for r in records if r.enrollment.university))
+    }
+
 
 if __name__ == "__main__":
     result = main()
