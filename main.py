@@ -1,24 +1,18 @@
 from generated.models import create_dataset
-from collections import Counter
-
 
 def main():
+    # Load the dataset
     dataset = create_dataset()
-    records = list(dataset)
+    print(f"Loaded {len(dataset)} records")
 
-    uni_counts = Counter(r.enrollment.university for r in records if r.enrollment.university)
-    top_5 = dict(uni_counts.most_common(5))
+    # Your analysis code here
+    for record in dataset:
+        # Example: Access fields from your archetype
+        # print(record.field_name)
+        print(record.patient.age)
+        pass
 
-    has_email = sum(1 for r in records if r.personal_info.email)
-
-    return {
-        "total_records": len(records),
-        "records_with_email": has_email,
-        "email_coverage_pct": round(has_email / len(records) * 100, 1) if records else 0,
-        "top_5_universities": top_5,
-        "distinct_universities": len(uni_counts)
-    }
-
+    return {"result": "Analysis complete"}
 
 if __name__ == "__main__":
     result = main()

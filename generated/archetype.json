@@ -1,42 +1,30 @@
 {
-  "$id": "3a9bf0ce-23fa-4a93-976c-97fa8bbeecfa/ZD6mhvPyas1H",
+  "$id": "68bd9dec-b6ee-4962-aa81-4c62ebb68fdb/aeniTGCGPUf5",
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "title": "epsilon",
   "type": "object",
   "properties": {
-    "personal_info": {
+    "vitals": {
       "type": "object",
       "properties": {
-        "first_name": {
-          "type": "object",
-          "description": "First Name"
-        },
-        "last_name": {
-          "type": "object",
-          "description": "Last Name"
-        },
-        "email": {
-          "type": "object",
-          "description": "Email"
+        "heart_rate": {
+          "type": "integer",
+          "description": "Heart Rate"
         }
       }
     },
-    "student": {
+    "patient": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "Age"
+        }
+      }
+    },
+    "root": {
       "type": "object",
       "properties": {}
-    },
-    "enrollment": {
-      "type": "object",
-      "properties": {
-        "university": {
-          "type": "integer",
-          "description": "University"
-        },
-        "year": {
-          "type": "integer",
-          "description": "Year"
-        }
-      }
     }
   }
 }
